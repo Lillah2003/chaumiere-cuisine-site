@@ -10,33 +10,116 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AvisRouteImport } from './routes/avis'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as LaCarteRouteImport } from './routes/la-carte'
+import { Route as LeRestaurantRouteImport } from './routes/le-restaurant'
+import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
+import { Route as PolitiqueDeConfidentialiteRouteImport } from './routes/politique-de-confidentialite'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AvisRoute = AvisRouteImport.update({
+  id: '/avis',
+  path: '/avis',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LaCarteRoute = LaCarteRouteImport.update({
+  id: '/la-carte',
+  path: '/la-carte',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeRestaurantRoute = LeRestaurantRouteImport.update({
+  id: '/le-restaurant',
+  path: '/le-restaurant',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
+  id: '/mentions-legales',
+  path: '/mentions-legales',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PolitiqueDeConfidentialiteRoute =
+  PolitiqueDeConfidentialiteRouteImport.update({
+    id: '/politique-de-confidentialite',
+    path: '/politique-de-confidentialite',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/avis': typeof AvisRoute
+  '/contact': typeof ContactRoute
+  '/la-carte': typeof LaCarteRoute
+  '/le-restaurant': typeof LeRestaurantRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
+  '/politique-de-confidentialite': typeof PolitiqueDeConfidentialiteRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/avis': typeof AvisRoute
+  '/contact': typeof ContactRoute
+  '/la-carte': typeof LaCarteRoute
+  '/le-restaurant': typeof LeRestaurantRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
+  '/politique-de-confidentialite': typeof PolitiqueDeConfidentialiteRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/avis': typeof AvisRoute
+  '/contact': typeof ContactRoute
+  '/la-carte': typeof LaCarteRoute
+  '/le-restaurant': typeof LeRestaurantRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
+  '/politique-de-confidentialite': typeof PolitiqueDeConfidentialiteRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/avis'
+    | '/contact'
+    | '/la-carte'
+    | '/le-restaurant'
+    | '/mentions-legales'
+    | '/politique-de-confidentialite'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/avis'
+    | '/contact'
+    | '/la-carte'
+    | '/le-restaurant'
+    | '/mentions-legales'
+    | '/politique-de-confidentialite'
+  id:
+    | '__root__'
+    | '/'
+    | '/avis'
+    | '/contact'
+    | '/la-carte'
+    | '/le-restaurant'
+    | '/mentions-legales'
+    | '/politique-de-confidentialite'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AvisRoute: typeof AvisRoute
+  ContactRoute: typeof ContactRoute
+  LaCarteRoute: typeof LaCarteRoute
+  LeRestaurantRoute: typeof LeRestaurantRoute
+  MentionsLegalesRoute: typeof MentionsLegalesRoute
+  PolitiqueDeConfidentialiteRoute: typeof PolitiqueDeConfidentialiteRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +131,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/avis': {
+      id: '/avis'
+      path: '/avis'
+      fullPath: '/avis'
+      preLoaderRoute: typeof AvisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/la-carte': {
+      id: '/la-carte'
+      path: '/la-carte'
+      fullPath: '/la-carte'
+      preLoaderRoute: typeof LaCarteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/le-restaurant': {
+      id: '/le-restaurant'
+      path: '/le-restaurant'
+      fullPath: '/le-restaurant'
+      preLoaderRoute: typeof LeRestaurantRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mentions-legales': {
+      id: '/mentions-legales'
+      path: '/mentions-legales'
+      fullPath: '/mentions-legales'
+      preLoaderRoute: typeof MentionsLegalesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politique-de-confidentialite': {
+      id: '/politique-de-confidentialite'
+      path: '/politique-de-confidentialite'
+      fullPath: '/politique-de-confidentialite'
+      preLoaderRoute: typeof PolitiqueDeConfidentialiteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AvisRoute: AvisRoute,
+  ContactRoute: ContactRoute,
+  LaCarteRoute: LaCarteRoute,
+  LeRestaurantRoute: LeRestaurantRoute,
+  MentionsLegalesRoute: MentionsLegalesRoute,
+  PolitiqueDeConfidentialiteRoute: PolitiqueDeConfidentialiteRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
