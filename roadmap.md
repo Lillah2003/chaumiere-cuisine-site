@@ -1,5 +1,6 @@
 # La Chaumière
-- [ ] Build homepage and separate menu, restaurant, reviews, contact and legal pages.
-- [ ] Add editorial images, mobile navigation, phone actions and local metadata.
-- [ ] Verify pages, mobile layout and primary navigation.
+- [x] Build homepage and separate menu, restaurant, reviews, contact and legal pages.
+- [x] Add editorial images, mobile navigation, phone actions and local metadata.
+- [x] Verify pages, mobile layout and primary navigation.
 - [ ] Interactive Google map: connection declined; retain external directions pending configuration.
+- [ ] Final legal publication details: awaiting verified operator, registration, publication director and host information.
