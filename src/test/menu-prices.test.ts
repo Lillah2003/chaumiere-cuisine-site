@@ -2,13 +2,13 @@ import { describe, expect, it } from "vitest";
 
 import { wines } from "@/data/restaurant";
 
-// Prices come from the supplied menu; the Gamay was corrected from 7 € to 8 € on 8 October 2026.
+// Prices come from the supplied menu; the Gamay is back to 7 € as supplied.
 describe("Carte des vins", () => {
-  it("affiche le Gamay « 23 » à 8 €", () => {
+  it("affiche le Gamay « 23 » à 7 €", () => {
     const gamay = wines
       .find((group) => group.category === "Rouges")
       ?.items.find((item) => item.name.startsWith("Gamay"));
 
-    expect(gamay?.price).toBe(8);
+    expect(gamay?.price).toBe(7);
   });
 });
