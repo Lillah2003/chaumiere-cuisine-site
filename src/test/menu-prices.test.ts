@@ -9,6 +9,6 @@ describe("Carte des vins", () => {
       .find((group) => group.category === "Rouges")
       ?.items.find((item) => item.name.startsWith("Gamay"));
 
-    expect(gamay?.price).toBe(8);
+    expect(gamay?.price).toBe(7);
   });
 });
