@@ -105,6 +105,7 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="fr">
       <head>
         <HeadContent />
+        <link rel="icon" type="image/png" href="/favicon.png" />
       </head>
       <body>
         {children}
