@@ -39,7 +39,7 @@ export const lunchMenu: MenuCategory[] = [
  {category:'Desserts',items:[{name:'Tarte d’ananas',description:'Infusion menthe et sorbet citron'},{name:'Tarte amandine',description:'Chocolat orange'},{name:'Tarte Tatin'}]},
 ];
 export const wines: MenuCategory[] = [
- {category:'Rouges',items:[{name:'Gamay « 23 »',price:7},{name:'Bordeaux « 19 »',price:6},{name:'Côte du Rhône « 23 »',price:8},{name:'IGP Hérault « 23 »',price:7},{name:'Côteaux Bourguignons « 22 »',price:8}]},
+ {category:'Rouges',items:[{name:'Gamay « 23 »',price:8},{name:'Bordeaux « 19 »',price:6},{name:'Côte du Rhône « 23 »',price:8},{name:'IGP Hérault « 23 »',price:7},{name:'Côteaux Bourguignons « 22 »',price:8}]},
  {category:'Blancs',items:[{name:'Vdp des Cévennes « 23 »',price:8},{name:'Touraine Sauvignon « 23 »',price:6},{name:'Petit Chablis « 23 »',price:8},{name:'Tariquet « 23 »',price:6},{name:'Naditan « 23 »',price:7}]},
  {category:'Rosé',items:[{name:'Provence « 24 »',price:6}]},
 ];
