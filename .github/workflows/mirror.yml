@@ -22,5 +22,5 @@ jobs:
 
       - name: Push to Client Repo
         run: |
-          git remote add client git@github.com:PSEUDO_CLIENT/REPO_CLIENT.git
+          git remote add client git@github.com:Lillah2003/chaumiere-cuisine-site.git
           git push --force client main
