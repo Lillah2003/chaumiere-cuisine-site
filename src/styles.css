@@ -16,12 +16,12 @@
  --color-burgundy: var(--burgundy); --radius-md: 2px; --radius-lg: 4px;
 }
 :root {
- --background: oklch(0.982 0.005 80); --foreground: oklch(0.29 0.025 55);
- --primary: oklch(0.38 0.055 55); --primary-foreground: oklch(0.985 0.005 80);
- --secondary: oklch(0.95 0.012 72); --muted-foreground: oklch(0.48 0.025 60);
- --border: oklch(0.84 0.018 70); --burgundy: oklch(0.42 0.075 15);
+ --background: oklch(0.98 0.004 80); --foreground: oklch(0.28 0.018 70);
+ --primary: oklch(0.33 0.048 152); --primary-foreground: oklch(0.985 0.004 80);
+ --secondary: oklch(0.955 0.014 72); --muted-foreground: oklch(0.48 0.018 65);
+ --border: oklch(0.86 0.012 75); --burgundy: oklch(0.42 0.075 15);
  --facade-accent: oklch(0.35 0.047 178);
- --hero-shade: oklch(0.18 0.025 178 / 48%); --hero-shade-bottom: oklch(0.18 0.025 178 / 66%);
+ --hero-shade: oklch(0.18 0.02 178 / 48%); --hero-shade-bottom: oklch(0.18 0.02 178 / 66%);
  --nav-shadow: 0 2px 20px oklch(0.2 0.02 178 / 5%);
 }
 * { border-color: var(--border); box-sizing: border-box; }
