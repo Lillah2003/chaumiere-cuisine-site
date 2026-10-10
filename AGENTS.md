@@ -14,3 +14,5 @@
 - Use shared restaurant sections and shared root navigation/footer with separate content routes; this preserves consistent presentation and page-specific search metadata.
 - Keep all presentation colors, typography and interaction styles in the global semantic design system; components consume those roles.
 - Use telephone links for reservations and external Google Maps links until an approved map connection exists; no online booking or invented map is implied.
+
+- Import supplied restaurant photographs through CDN asset pointers; this keeps media delivery consistent and avoids bundling large source images.
