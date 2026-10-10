@@ -16,10 +16,11 @@
  --color-burgundy: var(--burgundy); --radius-md: 2px; --radius-lg: 4px;
 }
 :root {
- --background: oklch(0.982 0.005 100); --foreground: oklch(0.27 0.018 175);
- --primary: oklch(0.35 0.047 178); --primary-foreground: oklch(0.985 0.005 100);
- --secondary: oklch(0.935 0.019 155); --muted-foreground: oklch(0.47 0.018 165);
- --border: oklch(0.82 0.021 155); --burgundy: oklch(0.42 0.075 15);
+ --background: oklch(0.982 0.005 80); --foreground: oklch(0.29 0.025 55);
+ --primary: oklch(0.38 0.055 55); --primary-foreground: oklch(0.985 0.005 80);
+ --secondary: oklch(0.95 0.012 72); --muted-foreground: oklch(0.48 0.025 60);
+ --border: oklch(0.84 0.018 70); --burgundy: oklch(0.42 0.075 15);
+ --facade-accent: oklch(0.35 0.047 178);
  --hero-shade: oklch(0.18 0.025 178 / 48%); --hero-shade-bottom: oklch(0.18 0.025 178 / 66%);
  --nav-shadow: 0 2px 20px oklch(0.2 0.02 178 / 5%);
 }
@@ -34,7 +35,7 @@ img { display:block; width:100%; height:100%; object-fit:cover; }
 .wordmark { font-family:var(--font-display); font-size:25px; font-weight:600; white-space:nowrap; }
 .nav-links { display:flex; gap:30px; align-items:center; font-size:12px; }
 .nav-link { position:relative; padding:12px 0; }
-.nav-link:after { content:''; position:absolute; height:1px; background:var(--primary); bottom:5px; left:0; width:0; transition:width .2s; }
+ .nav-link:after { content:''; position:absolute; height:1px; background:var(--facade-accent); bottom:5px; left:0; width:0; transition:width .2s; }
 .nav-link:hover:after,.nav-link[data-status=active]:after { width:100%; }
 .restaurant-button { background:var(--primary); color:var(--primary-foreground); border-radius:2px; min-height:46px; padding:0 23px; font-size:12px; font-weight:500; transition:background .25s, transform .25s; box-shadow:none; }
 .restaurant-button:hover { background:var(--burgundy); }
@@ -44,8 +45,8 @@ img { display:block; width:100%; height:100%; object-fit:cover; }
 .restaurant-button-hero-outline:hover { background:color-mix(in oklab,var(--primary-foreground) 12%,transparent); }
 .editorial-link { padding:0 0 7px; border-radius:0; border-bottom:1px solid var(--primary); color:var(--primary); height:auto; font-size:12px; font-weight:500; background:transparent; gap:20px; }
 .editorial-link:hover { color:var(--burgundy); border-color:var(--burgundy); }
-.hero { position:relative; height:min(760px,calc(100svh - 140px)); min-height:540px; display:grid; place-items:center; color:var(--primary-foreground); text-align:center; }
-.hero-photo { position:absolute; inset:0; object-position:center 57%; }
+ .hero { position:relative; overflow:hidden; height:min(760px,calc(100svh - 140px)); min-height:540px; display:grid; place-items:center; color:var(--primary-foreground); text-align:center; }
+ .hero-photo { position:absolute; inset:0; object-position:center 57%; transform:scale(1.16); }
 .hero:after { content:''; position:absolute; inset:0; background:linear-gradient(var(--hero-shade),var(--hero-shade),var(--hero-shade-bottom)); }
 .hero-content { position:relative; z-index:1; padding:50px 20px 95px; }
 .eyebrow { font-size:10px; letter-spacing:0; font-weight:500; text-transform:uppercase; }
@@ -59,14 +60,14 @@ img { display:block; width:100%; height:100%; object-fit:cover; }
 .container { max-width:1180px; margin:auto; padding:0 40px; }
 .section { padding:100px 0; }
 .section h2 { font-size:55px; }
-.section-kicker { color:var(--burgundy); margin-bottom:20px; }
+ .section-kicker { color:var(--facade-accent); margin-bottom:20px; }
 .intro-grid { display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:100px; }
 .intro-copy { padding:25px 0; }
 .intro-copy p { color:var(--muted-foreground); max-width:380px; margin:25px 0 30px; }
 .intro-photo { height:490px; position:relative; }
 .photo-wrap { overflow:hidden; }
-.photo-wrap img { transition:transform .7s ease; }
-.photo-wrap:hover img { transform:scale(1.025); }
+ .photo-wrap img { transform:scale(1.16); transition:transform .7s ease; }
+ .photo-wrap:hover img { transform:scale(1.18); }
 .photo-caption { position:absolute; left:-35px; bottom:26px; background:var(--background); padding:15px 25px; font-family:var(--font-display); font-style:italic; font-size:18px; }
 .section-topline { display:flex; justify-content:space-between; align-items:end; margin-bottom:40px; gap:30px; }
 .section-topline p { color:var(--muted-foreground); margin-top:15px; }
