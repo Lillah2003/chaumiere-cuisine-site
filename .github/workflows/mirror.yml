@@ -1,4 +1,4 @@
-name: Sync to Client Repo
+name: Mirror to Client Repository
 
 on:
   push:
@@ -9,18 +9,33 @@ jobs:
   mirror:
     runs-on: ubuntu-latest
     steps:
+      # 1. Récupérer tout le code source
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Install SSH Key
-        uses: shimataro/ssh-key-action@v2
-        with:
-          key: ${{ secrets.CLIENT_SSH_KEY }}
-          known_hosts: ignore
+      # 2. Supprimer le dossier .github de la copie temporaire
+      - name: Remove .github folder for client
+        run: rm -rf .github
 
+      # 3. Synchroniser vers le dépôt du client
       - name: Push to Client Repo
+        env:
+          SSH_KEY: ${{ secrets.CLIENT_SSH_KEY }}
         run: |
-          git remote add client git@github.com:Lillah2003/chaumiere-cuisine-site.git
-          git push --force client main
+          mkdir -p ~/.ssh
+          echo "$SSH_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -h github.com >> ~/.ssh/known_hosts
+          
+          # Configuration temporaire Git
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Commit de la suppression du dossier .github en mémoire
+          git add -A
+          git commit -m "Chore: prepare client mirror" || true
+          
+          # Push forcé vers le dépôt client
+          git push --force git@github.com:Lillah2003/chaumiere-cuisine-site.git HEAD:main
