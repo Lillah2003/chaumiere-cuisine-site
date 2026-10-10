@@ -1,4 +1,5 @@
 # La Chaumière
+- [x] Replace generated imagery with seven supplied restaurant photos and adapt the palette to the restaurant.
 - [x] Build homepage and separate menu, restaurant, reviews, contact and legal pages.
 - [x] Add editorial images, mobile navigation, phone actions and local metadata.
 - [x] Verify pages, mobile layout and primary navigation.
